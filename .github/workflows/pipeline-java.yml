@@ -1,29 +1,30 @@
 name: CI
 on:
   
- push:
+  push:
   #branches: [ "feature-*!" ]
- #pull_request:
+  #pull_request:
   #branches: [ "main" ]
   
- workflow_dispatch:
+  workflow_dispatch:
  
 jobs:
   
- build:
+  build:
    
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
   
-  steps:
-    - uses: actions/checkout@v3
+    steps:
 
-    - name: Run a multi-line script
-      run: |
+      - uses: actions/checkout@v3
+
+      - name: Run a multi-line script
+        run: |
           echo "Modificación del mensaje del microservicio"
-          test:
-      runs-on: ubuntu-latest
-      needs: build
-        steps:
-          - name: test
-            run: |
-              echo "paso dos agregado"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: test
+        run: |
+          echo "paso dos agregado"
