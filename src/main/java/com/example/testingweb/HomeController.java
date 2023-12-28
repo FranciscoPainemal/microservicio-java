@@ -11,6 +11,7 @@ public class HomeController {
 	public @ResponseBody String greeting() {
 		String password = "123456";
 		String user = "Admin";
+		String query = "SELECT * FROM USUARIOS WHERE 1 = 1";
 		return "Hello, World";
 	}
 
